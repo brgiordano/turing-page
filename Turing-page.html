@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
+
+    <!--------------------------- JAVA SCRIPT --------------------------->
+<!-- 
+    OBS: TODO OS CÓDIGOS JAVASCRIPT AQUI COLOCADOS SÃO APENAS PARA FAZER FUNCIONAR O BOTÃO MOBILE
+    NO MOMENTO DO DESENVOLVIMENTO DESSE PROJETO, AINDA NÃO FOI APRENDIDO JAVASCRIPT, PORTANTO ESSE
+    CÓDIGO PODE NÃO SER A MELHOR SOLUÇÃO.
+ -->
+ <!-- PERMITE QUE O BOTÃO SEJA CLICADO E EXIBA O MENU -->
+ <script type="text/javascript">
+    window.onload = function(){
+        document.querySelector("#menu-mobile").addEventListener("click", function(){
+            if(document.querySelector("#menu ul").style.display == 'flex'){
+                document.querySelector("#menu ul").style.display = 'none';
+            }
+            else{
+                document.querySelector("#menu ul").style.display = 'flex';
+            }
+        });
+    };
+
+// CORRIGE O BUG DE QUANDO USA O BOTÃO DO MENU PARA FECHAR O MENU, O MENU PERMANECE COM DISPLAY NONE MESMO QUANDO AUMENTA A LARGURA DA TELA.
+    window.onresize=function(){
+        if(document.body.clientWidth > 554){
+            document.querySelector("#menu ul").style.display="flex";
+            document.querySelector("#menu-mobile").style.display="none";
+            
+        }
+        else{
+            document.querySelector("#menu-mobile").style.display="flex";
+            document.querySelector("#menu ul").style.display="none";
+        };
+        
+    };
+</script>
+<!------------------------- FIM DOS CÓDIGOS JAVA SCRIPT --------------------------->
+
+    <link rel="stylesheet" href="Turing-page.css">
+
+    <title>Exercício: Página de tributo - Alan Turing</title>
+</head>
+<body>
+    <header class="flex">
+        <div class="container flex">
+            <h1>ALAN TURING</h1>
+            <h2 class="small-bar">O pai da computação</h2>
+            <h3>1912 - 1954</h3>
+        </div>
+    </header>
+    <nav id="menu" class="flex">
+        <div class="container flex">
+            <div id="menu-mobile">
+                <div class="mobile-line"></div>
+                <div class="mobile-line"></div>
+                <div class="mobile-line"></div>
+            </div>
+            <ul class="flex">
+                <li class="flex"><a href="#turingName">Turing</a></li>
+                <li class="flex"><a href="#professional">Vida profissional</a></li>
+                <li class="flex"><a href="#the-bombe">The Bombe</a></li>
+                <li class="flex"><a href="#enigma">Enigma</a></li>
+                <li class="flex"><a href="#legacy">Legado</a></li>
+                <li class="flex"><a href="#curiosities">Curiosidades</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="flex">
+        <div class="bg-about flex">
+            <div class="container flex">
+                <section id="about">
+                    <figure id="img01" class="images flex">
+                        <img src="images/turing-page/turing.png" alt="Ilustração de Alan Turing">
+                        <figcaption>Retirado de: <a href="https://www.pngwing.com/en/free-png-sqgaw" target="_blank">Png Wing</a></figcaption>
+                    </figure>
+                    <p id="abstract">
+                        <strong id="turingName">Alan Turing</strong> foi um matemático e criptógrafo inglês considerado atualmente como o pai da computação, uma vez que,
+                        por meio de suas ideias, foi possível desenvolver o que chamamos hoje de computador. Turing também ficou muito
+                        conhecido como um dos responsáveis por decifrar o código utilizado pelas comunicações nazistas durante a Segunda
+                        Guerra Mundial.
+                        <br><br>
+                        Por meio do seu trabalho, foi desenvolvida uma máquina conhecida como “bomba eletromecânica” (The Bombe, em inglês),
+                        que decifrou o código da máquina Enigma utilizado pelos alemães, e permitiu que os Aliados tivessem acesso a
+                        informações privilegiadas ao longo da guerra. Turing morreu em 1954, provavelmente tendo cometido suicídio.
+                    </p>
+
+                    <h2 id="professional" class="small-bar">Vida profissional</h2>
+                    <figure id="img02" class="images flex">
+                        <img src="images/turing-page/Turing_flat.jpg" alt="Casa em que trabalhou Alan Turing">
+                        <figcaption>
+                            Duas casas no quintal no Bletchley Park. Turing trabalhou aqui entre 1939 e 1940, antes de se mudar para a Hut 8.
+                            <br>
+                            Retirado de: <a href="https://pt.wikipedia.org/wiki/Alan_Turing" target="_blank">Wikipedia</a>
+                        </figcaption>
+                    </figure>
+                    <p id="profesional-life">
+                        Em 1936, Turing apresentou uma teoria a respeito da construção de uma máquina capaz de realizar cálculos. Entre 1936 e 1938,
+                        estudou matemática e criptografia em Princeton, local em que obteve seu PhD. A partir de 1938, retornou à Inglaterra e passou
+                        a integrar uma organização do governo britânico, responsável por quebrar códigos e enigmas, chamada Government Code and Cypher
+                        School.
+                        <br><br>
+                        Com o começo da Segunda Guerra Mundial, em setembro de 1939, Turing ingressou no Bletchley Park, a instalação que reuniu grandes
+                        matemáticos e criptógrafos e que teve papel crucial na interceptação de mensagens enviadas pelos exércitos do Eixo
+                        (formado por Itália, Alemanha e Japão). Nessa instalação, houve uma intensa cooperação de cientistas ingleses, franceses e
+                        poloneses para decifrar o código utilizado pelos alemães e seus aliados.
+                        <br><br>
+                        Os alemães utilizavam a Enigma, uma máquina alemã que criptografava as mensagens que eram enviadas pelo exército e tornava-as quase
+                        indecifráveis. Alan Turing e outros matemáticos ingleses atuaram diretamente na quebra do código alemão, e, para isso, contaram com
+                        estudos realizados por três matemáticos poloneses, que atuaram entre 1932 e 1939.
+                        <br><br>
+                        Os franceses concederam aos britânicos chaves criptográficas utilizadas pelo Wehrmacht (exército alemão), e os poloneses deram-lhes
+                        máquinas Enigma. Em 1940, os britânicos conseguiram decodificar as primeiras mensagens enviadas pelos alemães, mas somente com a Bombe
+                        foi possível decodificá-las na velocidade demandada pela guerra.
+                        <br><br>
+                        A máquina utilizada pelos britânicos na decodificação das mensagens foi resultado do trabalho de Turing. Sua teoria inspirou-se nos
+                        estudos do polonês Marian Rejewski, e a execução do trabalho foi realizada pelo engenheiro Harold Keen. A importância de Turing dá-se
+                        porque foi ele que, ainda em 1939, afirmou que era possível construir um novo artefato capaz de quebrar o código alemão.
+                        Isso porque os poloneses já tinham desenvolvido uma bomba eletromecânica, mas como o princípio de criptoanálise da bomba polonesa era
+                        frágil, essa máquina logo se tornou obsoleta.
+                        <br><br>
+                        Alan Turing também foi o responsável por recrutar Tommy Flowers para o departamento de criptografia de Bletchley Park. Flowers, anos
+                        depois, acabou sendo o responsável pela construção do Colossus, uma importante máquina que decifrou o código de uma máquina de
+                        criptografia alemã chamada Lorenz.
+                    </p>
+                    <h2 id="the-bombe" class="small-bar">The Bombe: a máquina de Turing</h2>
+                    <figure id="img03" class="images flex">
+                        <img src="images/turing-page/bombe-rebuild.jpg" alt="The Bombe - A máquina de Turing">
+                        <figcaption>
+                            The Bombe - A máquina de Turing
+                            <br>
+                            Retirado de: <a href="https://memoria.ebc.com.br/infantil/voce-sabia/2015/07/alan-turing-e-considerado-pai-da-computacao" target="_blank">Site EBC</a>
+                        </figcaption>
+                    </figure>
+                    <p class="turing-machine">
+                        A máquina criada por Turing, ou a sua bomba eletromecânica, era usada para decifrar mensagens emitidas pelas forças armadas alemãs e
+                        criptografadas por uma outra máquina chamada Enigma. Essas mensagens eram emitidas em forma de ondas de rádio, por isso eram facilmente
+                        interceptadas em Bletchley Park.
+                        <br><br>
+                        A Bombe era um enorme computador eletromecânico que pesava quase uma tonelada e tinha cerca de 1,80 m altura. Na parte frontal da máquina,
+                        havia 108 eixos, que eram agrupados em nove linhas com 12 espaços cilíndricos. Nesses cilindros eram encaixados os tambores, que, depois
+                        de programados manualmente, por meio de cartões com pequenos furos, giravam simultaneamente, combinando as letras de cada tambor com as
+                        mensagens captadas em agrupamentos de três letras.
+                        <br><br>
+                        Os tambores iniciavam a combinação em uma determinada letra e, ao final de cada ciclo, sua posição era incrementada para a próxima letra,
+                        assim, o ciclo era iniciado novamente. Ao todo, cada ciclo passava por um total de 17.576 posições diferentes. Agora, vamos entender como
+                        funcionava a máquina que codificava as comunicações realizadas pelos nazistas e que foi decifrada por meio do trabalho de Turing.
+                    </p>
+                    <h2 id="enigma" class="small-bar">Enigma: como funcionava</h2>
+                    <figure id="img04" class="images flex">
+                        <img src="images/turing-page/enigma.jpg" alt="Enigma - A máquina de criptografia nazista">
+                        <figcaption>
+                            Enigma - A máquina de criptografia nazista
+                            <br>
+                            Retirado de: <a href="https://www.fatosdesconhecidos.com.br/descobriam-o-segredo-da-enigma-maquina-nazista-usada-para-gerar-codigos-secretos/" target="_blank">Fatos desconhecidos</a>
+                        </figcaption>
+                    </figure>
+                    <p class="enigma-machine">
+                        Os poloneses foram os responsáveis por construir as primeiras bombas eletromecânicas. Elas obtiveram algum êxito em decifrar as mensagens
+                        criptografadas pela Enigma, no entanto, esse sucesso diminuiu drásticamente conforme a máquina alemã era aprimorada pelos engenheiros nazistas.
+                        Uma dessas implementações tornou-a indecifrável. No entanto, a captura de algumas chaves de criptografia possibilitou a quebra dos códigos nazistas.
+                        Foi nesse cenário que a programação feita por Alan Turing e sua equipe mostrou a sua utilidade.
+                        <br><br>
+                        O cientista da computação teve a ideia de implementar uma nova bomba eletromecânica, mais eficiente que as anteriores. Para tanto, programou-a
+                        prevendo a existência de trechos que se repetiam em grande parte das mensagens, além disso, soube como explorar uma grande falha na criptografia
+                        usada pela Enigma.
+                        <br><br>
+                        A Enigma podia ser configurada em 26 modos de encriptação distintos, baseados na posição em que três eixos mecânicos eram conectados entre si.
+                        A letra presente no primeiro eixo determinava quais seriam as letras seguintes. Desse modo, se a primeira letra fosse A, por exemplo, quando se
+                        digitava a letra J, essa era substituída pela letra B, no entanto, caso a letra inicial fosse B, a letra J seria substituída pela letra C.
+                        A letra inicial de cada mensagem era, portanto, a chave criptográfica de cada mensagem, e, por isso, era trocada todos os dias, exatamente à meia-noite.
+                        <br><br>
+                        Alan Turing e sua equipe sabiam do modo como a posição dos eixos da Enigma mudava a encriptação das mensagens e também que essa configuração era alterada
+                        todos os dias. Em uma de suas tentativas de quebrar o código criptografado, Turing desenvolveu uma técnica pela qual a Bombe buscava “atacar” uma frase
+                        específica que se repetia na mesma posição, em todas as mensagens trocadas entre as forças armadas nazistas. Além disso, o cientista inglês também se
+                        beneficiou de uma grande falha da máquina alemã: ela não era capaz de criptografar uma mensagem sem alterar todas as suas letras.
+                        <br><br>
+                        Isso indicava que se a frase original contivesse a letra A, por exemplo, a letra criptografada jamais poderia ser A, independentemente de qual fosse a
+                        configuração em que a máquina estava. Baseada nisso, a Bombe procurava a frase que se repetia e combinava-a às outras 26 possibilidades de configuração,
+                        captadas ao longo do tempo, até que, em alguma dessas combinações, a mesma letra não se repetisse. A frase em questão, presente no final de todas as
+                        mensagens, era “Heil Hitler” (salve Hitler).
+                    </p>
+                    <h2 id="legacy" class="small-bar">Legado de Alan Turing</h2>
+                    <figure id="img05" class="images flex">
+                        <img src="images/turing-page/turing-color-art.png" alt="Art com imagem de Alan Turing">
+                        <figcaption>
+                            Retirado do site: <a href="https://www.tennesseeloveless.com/alan-turing/#1612764709397-cc40b505-57ed61f1-f46c" target="_blank">Tennesseeloveless</a>
+                        </figcaption>
+                    </figure>
+                    <p class="alan-legacy">
+                        O maior legado deixado pelo matemático Alan Turing é, sem dúvidas, a invenção da máquina de Turing.
+                        Esta é um modelo teórico que pode ser usado para implementar todos os aspectos lógicos e matemáticos de um computador, independentemente de como ele
+                        venha a ser construído (mecânica ou eletronicamente, por exemplo).
+                        <br><br>
+                        A máquina de Turing foi criada em 1936, muito tempo antes da invenção dos computadores modernos. A maior parte dos nossos dispositivos eletrônicos,
+                        como celulares e computadores, são máquinas programáveis, que operam de acordo com os fundamentos da máquina de Turing. As calculadoras, por exemplo,
+                        operam como as primeiras máquinas de Turing, programadas para realizar cálculos simples.
+                        <br><br>
+                        Como citado, a participação de Turing na decifração da Enigma e na construção da bomba eletromecânica contribuiu para acelerar o final da Segunda Guerra Mundial,
+                        sendo responsável por salvar milhões de vidas. Além disso, nesse período, as tecnologias de criptografia e computação sofreram grandes avanços.
+                        <br><br>
+                        Além de ter construído as bases da computação moderna, Turing também desenvolveu os primeiros testes capazes de distinguir
+                        a inteligência artificial da inteligência humana. Atualmente os testes de Turing são usados em diversos sites e dispositivos,
+                        promovendo maior segurança para os seus usuários.
+                    </p>
+                    <p class="source">
+                        <strong>FONTE: </strong><a href="https://brasilescola.uol.com.br/biografia/alan-mathison.htm" target="_blank">Brasil Escola</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <div class="bg-curiosities flex">
+            <div class="container flex">
+                <section id="curiosities">
+                    <h2>17 fatos e curiosidades sobre a vida do Alan Turing</h2>
+                    <h3>Décadas após sua morte, o legado do homem que ajudou a pôr fim na Segunda Guerra segue presente</h3>
+                    
+                    <div class="curiosity-line">
+                        <div class="left-side">
+                            <h2 class="small-bar">1. Criança prodígio</h2>
+                            <p>
+                                Alan Mathison Turing nasceu em 23 de junho de 1912 em Londres, Inglaterra.
+                                Ainda na infância, já dava sinais de ser mais inteligente que a média. Aos 13 anos,
+                                teve a oportunidade de estudar na Sherborne School, em uma prestigiada escola da capital
+                                inglesa, mas tinha um problema: ficava a quase 100 quilômetros de onde morava.
+                                <br>
+                                No primeiro dia de aula, uma greve impediu que os trens circulassem.
+                                Nada que impedisse Turing, que pedalou a distância para não perder a aula.
+                            </p>
+                        </div>                        
+                        <div class="right-side">
+                            <h2 class="small-bar">2. A leitura do jovem cientista</h2>
+                            <p>
+                                A lista de livros retirados por Turing na biblioteca da escola, entre 1928 e 1930,
+                                veio a público recentemente e revela que, já naquela época, matemática e física eram
+                                seus assuntos favoritos. O único romance na lista era uma história real.
+                                No livro The Escaping Club, o autor, A. J. Evans, conta suas experiências durante a
+                                Primeira Guerra Mundial.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">3. Turing atleta</h2>
+                            <p>
+                                Desde a infância a corrida era o esporte favorito do matemático.
+                                Durante a Segunda Guerra Mundial, ele corria mais de 60 km entre uma instalação militar
+                                secreta do governo britânico, Bletchley Park, e Londres, para atender à reuniões.
+                                <br>
+                                Ele chegou a participar das eliminatórias para representar seu país nas Olimpíadas em 1948,
+                                completando a maratona em 2 horas e 46 minutos. Onze minutos depois do campeão olímpico daquele ano.
+                                Uma lesão na perna, porém, acabou com sua carreira de atleta.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">4. Ódio aos EUA</h2>
+                            <p>
+                                A descoberta de 148 cartas escritas por Turing revelou uma característica bem peculiar.
+                                Entre manuscritos e rascunhos de suas teorias, diversos convites para que palestrasse em universidade.
+                                Ao receber uma vinda dos Estados Unidos, respondeu categoricamente:
+                                “Não gostaria da viagem, e eu detesto a América."
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">5. Gênio incompreendido</h2>
+                            <p>
+                                As peculiaridades de Turing não param por aí. Em suas pedaladas, ele costumava utilizar uma máscara de gás
+                                alegando que era para combater suas alergias. A corrente de sua bicicleta sempre caia.
+                                <br>
+                                No lugar de consertar, aprendeu a reconhecer o momento exato que ia escapar e descia da bike,
+                                impedindo que a corrente saísse. Em Bletchley Park, sua caneca de chá era famosa por estar sempre
+                                acorrentada ao aquecedor, isso quando não estava usando. Era para impedir que fosse usada por seus
+                                colegas de trabalho.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">6. Biólogo Turing</h2>
+                            <p>
+                                Em seu único paper publicado na área, em 1952, buscou explicar como padrões repetidos se desenvolveram
+                                em organismos vivos. É como a sequência de Fibonacci, vista em flores e caracóis. Para Turing, muitos
+                                desses padrões vinham da atuação de um tipo específico de hormônios, denominados morfogênicos, sobre as células.
+                                <br>
+                                Essas substâncias secretadas pelas células promovem ou inibem as influências de cada uma sobre várias funções
+                                biológicas, seja a produção de um pigmento ou a regulação do seu crescimento. A difusão desses morfogênicos
+                                pelos tecidos do organismo seguiriam padrões matemáticos, o que explicaria a repetição de formas, cores e
+                                texturas entre os seres vivos. Sua teoria, no entanto, nunca foi comprovada pela ciência.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">7. Computador teórico</h2>
+                            <p>
+                                Em um de seus artigos, sobre números computáveis, defendeu que existem problemas que não têm solução e que nem
+                                toda afirmação lógica está apta a ser comprovada a partir de qualquer sistema formal da matemática.
+                                A conclusão contradiz a teoria do matemático David Hilbert, que acreditava ser impossível existir na matemática
+                                algo cuja verdade nunca pudesse ser descoberta. Idealizou um processo mecânico que conseguisse dizer quando um
+                                procedimento lógico poderia ser comprovado ou não.
+                                <br>
+                                Foi assim que nasceu a Máquina de Turing, um aparelho hipotético que mudaria de função conforme a necessidade,
+                                baseando todo seu funcionamento em um grande número de cálculos em sistema binário permitindo definir e,
+                                quando possível, resolver problemas por meio de uma sequência de etapas. Vem daí a lógica do algoritmo e de toda
+                                a computação moderna.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">8. O visionário</h2>
+                            <p>
+                                Muitas décadas antes da Inteligência Artificial chegar aos smartphones, Turing criou um teste que a Siri ainda está
+                                longe de passar. Em 1950, ele já antevia que um dia o processamento das máquinas alcançaria o desempenho do cérebro humano.
+                                No artigo Maquinaria Computacional e Inteligência introduziu o conceito de “jogo da imitação”. Assim, uma máquina passaria
+                                em um teste de Turing ao conversar com um ser humano sem que esse perceba se tratar de uma inteligência artificial.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">9. Agente Secreto</h2>
+                            <p>
+                                Em uma mansão vitoriana na cidade de Bletchley, um grupo de gênios contratados pelo serviço de inteligência britânico
+                                foi reunido durante a Segunda Guerra Mundial para desvendar o código militar alemão gerado pela Enigma, máquina de
+                                criptografia supostamente impenetrável.
+                                <br>
+                                Com a equipe, o matemático começou a trabalhar na produção de uma máquina chamada “a bomba”. O instrumento identificava
+                                pontos fracos da codificação e foi responsável por revelar a posição das tropas alemãs, o que ajudou a encurtar muito a
+                                guerra.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">10. Xadrez para PC</h2>
+                            <p>
+                                Um dos gênios contratados para decifrar os códigos alemães era um campeão de xadrez. Ele então desenvolveu,
+                                com lápis e papel, o programa Turochamp, idealizado para antever as possibilidades de movimentos de peças nas duas próximas
+                                jogadas, e escolher o melhor.
+                                <br>
+                                Embora nenhum computador existisse para colocar em prática aquele algoritmo, isso aconteceu em 2012.
+                                O mestre do xadrez Garry Kasparov jogou contra o programa de Turing, e ganhou fácil, em apenas 16 jogadas.
+                                “Eu compararia com um dos primeiros carros — hoje você pode rir deles, mas ainda assim são um grande feito”,
+                                disse o campeão na época.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">11. Homofobia mata</h2>
+                            <p>
+                                Turing quase se casou com sua colega de equipe Joan Clarke, mas, quando ele lhe confidenciou que era gay,
+                                ela preferiu não manter o compromisso. O matemático se envolveu com um jovem chamado Arnold Murray e, depois
+                                de ter sua casa arrombada por um amigo do amante, denunciou o caso à polícia.
+                                <br>
+                                Acabou sendo preso por “indecência” após declarar ingenuamente às autoridades sua orientação sexual,
+                                considerada então ilegal. Talvez por sua importância para o governo, ofereceram liberdade a Turing sob a
+                                condição de que se submetesse a um “tratamento” com injeções de estrogênio sintético. Uma castração química
+                                com hormônio feminino.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">12. Maçã envenenada</h2>
+                            <p>
+                                No dia 7 de junho de 1954 Turing morreu por ingestão de cianeto. O matemático teria envenenado uma maçã
+                                e comido para pôr fim à própria vida. Afinal, sua vida não estava muito fácil. Perseguido por ser gay,
+                                perdeu seu emprego e estava falido. Os hormônios femininos, além de ter o tornado impotente, fez com que
+                                crescesse seios.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">13. Mas há controvérsias</h2>
+                            <p>
+                                Jack Copeland, um estudioso sobre a vida de Alan Turing defende que não existem evidências que comprovem
+                                que ele tenha realmente se suicidado. A maçã nunca foi testada para comprovar a presença de cianeto, ele
+                                deixou uma lista de afazeres para o dia seguinte, algo incomum para quem pretende se suicidar, e seus amigos
+                                contavam que ele andava tranquilo antes de sua morte. A mãe de Turing defende que ele provavelmente tenha se
+                                envenenado acidentalmente enquanto testava com produtos químicos no laboratório de sua casa.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">14. Reconhecimento póstumo</h2>
+                            <p>
+                                Apesar de seu papel fundamental no desfecho da Segunda Guerra Mundial, o mundo demorou para conhecer essa história.
+                                As informações foram mantidas confidenciais até a década de 70. As técnicas que Turing usou para decodificar as
+                                mensagens nazistas só foi levada à público em 2013.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">15. Perdão Real</h2>
+                            <p>
+                                Somente em 2009, o primeiro ministro do Reino Unido, Gordon Brown, pediu desculpas publicamente em nome do governo britânico.
+                                “Alan e muitos outros milhares de homens gays que foram condenados por leis homofóbicas foram tratados terrivelmente”,
+                                disse Brown.
+                                <br>
+                                “Em nome do governo britânico e de todos aqueles que vivem em liberdade graças ao trabalho de Alan,
+                                eu estou muito orgulhoso de dizer: me desculpe, você merecia coisas muito melhores.”
+                                Sua condenação, porém, só foi perdoada em 2013, emitido pela realeza britânica.
+                            </p>
+                        </div>
+                        <div class="right-side">
+                            <h2 class="small-bar">16. Lei de Turing</h2>
+                            <p>
+                                Somente no ano de 1967, as leis do Reino Unido deixaram de considerar a homossexualidade crime.
+                                Entretanto, somente em 2017 uma lei cancelou a condenação de todos aqueles homens que foram injustamente perseguidos antes
+                                do fim da legislação homofóbica. Cerca de 15 mil dos 65 mil condenados naquele tempo ainda estão vivos.
+                                A lei foi batizada com o nome da mais famosa vítima da homofobia institucionalizada na Inglaterra.
+                            </p>
+                        </div>
+                        <div class="left-side">
+                            <h2 class="small-bar">17. O jogo de Turing</h2>
+                            <p>
+                                Quando não estava decifrando códigos nazistas em Bletchley Park,
+                                Turing costumava jogar Monopoly - mais conhecido no Brasil por sua versão Banco Imobiliário - com o filho de um outro matemático,
+                                Max Newman. O jovem William Newman, no entanto, havia adaptado o jogo, utilizando as ruas da cidade de Bletchley. Em 2012,
+                                para celebrar o centenário de seu nascimento uma versão do jogo foi produzida com seu nome e as alterações de William,
+                                até hoje está à venda no museu instalado na antiga instalação militar secreta.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="source">
+                        <strong>FONTE: </strong><a href="https://revistagalileu.globo.com/Cultura/noticia/2018/06/17-fatos-e-curiosidades-sobre-vida-do-alan-turing.html" target="_blank">Revista Galileu</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="flex">
+        <div class="container">
+            <p class="source">
+                Para mais informações visite:
+                <a href="https://brasilescola.uol.com.br/biografia/alan-mathison.htm" target="_blank">
+                    Brasil Escola
+                </a>
+                e
+                <a href="https://revistagalileu.globo.com/Cultura/noticia/2018/06/17-fatos-e-curiosidades-sobre-vida-do-alan-turing.html" target="_blank">
+                    Revista Galileu
+                </a>
+            </p>
+            <p>
+                Criado por Giordano Bruno para fins de estudo prático.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
